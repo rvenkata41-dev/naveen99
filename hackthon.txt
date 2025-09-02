@@ -1,0 +1,19 @@
+import ibm_watson
+from ibm_watson import AssistantV2, NaturalLanguageUnderstandingV1
+from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
+
+# 🔐 IBM Watson Authentication
+assistant_authenticator = IAMAuthenticator('your-assistant-api-key')
+nlu_authenticator = IAMAuthenticator('your-nlu-api-key')
+
+# 🗣️ Watson Assistant Setup
+assistant = AssistantV2(
+    version='2021-06-14',
+    authenticator=assistant_authenticator
+)
+assistant.set_service_url('your-assistant-url')
+
+# 📊 Watson NLU Setup
+nlu = NaturalLanguageUnderstandingV1(
+    version='2021-08-01',
+    authenticator=n
